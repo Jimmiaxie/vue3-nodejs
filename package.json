@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
   },
   "author": "",
   "license": "ISC",
@@ -12,12 +14,14 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "terser-webpack-plugin": "^5.3.9",
+    "vite": "^4.4.9",
     "vue-loader": "^17.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
