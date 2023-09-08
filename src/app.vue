@@ -1,11 +1,14 @@
 <template>
   <div class="app">
-    <Counter />
+    <Container />
+    <br />
+    <!-- <Counter /> -->
     <!-- <CounterByJsx /> -->
   </div>
 </template>
 <script setup>
-import Counter from "./counter.vue";
+// import Counter from "./views/counter.vue";
 // import CounterByJsx from "./counterByJsx.jsx";
+import Container from "./views/address/container.vue";
 </script>
 <style></style>
