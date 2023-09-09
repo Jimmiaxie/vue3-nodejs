@@ -1,19 +1,16 @@
 <template>
   <div class="v-text">
     <span>地址：</span>
-    <input type="text" :value="props.text" @input="onInput" />
+    <input type="text" :value="myStore.text" @input="onInput" />
   </div>
 </template>
 
 <script setup>
-const props = defineProps({
-  text: String,
-});
-
-const emit = defineEmits(["onChangeText"]);
+import { useMyStore } from "../../store";
+const myStore = useMyStore();
 
 const onInput = (e) => {
-  emit("onChangeText", e.target.value);
+  myStore.updateText(e.target.value);
 };
 </script>
 

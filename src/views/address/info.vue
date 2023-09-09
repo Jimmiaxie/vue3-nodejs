@@ -1,27 +1,15 @@
 <template>
   <div class="v-info">
     <div>订单信息：</div>
-    <div>收货信息：{{ props.text }}</div>
-    <div>总金额：{{ totalPerice }}</div>
+    <div>收货信息：{{ myStore.text }}</div>
+    <div>总金额：{{ myStore.totalPerice }}</div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { useMyStore } from "../../store";
 
-const props = defineProps({
-  text: String,
-  list: Array,
-});
-
-const totalPerice = ref(0);
-watch(props, () => {
-  const total = props.list.reduce((acc, ace) => {
-    acc = acc + ace.price * ace.count;
-    return acc;
-  }, 0);
-  totalPerice.value = total;
-});
+const myStore = useMyStore();
 </script>
 
 <style scoped>

@@ -1,6 +1,10 @@
 <template>
   <div class="v-list">
-    <div class="v-list-item" v-for="(item, index) in list" :key="item.count">
+    <div
+      class="v-list-item"
+      v-for="(item, index) in myStore.list"
+      :key="item.count"
+    >
       <span class="text">{{ item.name }}</span>
       <span class="text">单价：{{ item.price }}</span>
       <button class="btn" @click="onClickDecrease(index)">-</button>
@@ -11,16 +15,15 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  list: Array,
-});
-const emit = defineEmits(["increase", "decrease"]);
+import { useMyStore } from "../../store";
+
+const myStore = useMyStore();
 
 const onClickIncrease = (index) => {
-  emit("increase", index);
+  myStore.increase(index);
 };
 const onClickDecrease = (index) => {
-  emit("decrease", index);
+  myStore.decrease(index);
 };
 </script>
 
